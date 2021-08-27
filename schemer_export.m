@@ -443,7 +443,7 @@ end
 % ------------------------ File stuff -------------------------------------
 if isempty(fname)
     % Get user's name
-    username = java.lang.System.getProperty('user.name');
+    username = java.lang.System.getProperty('user.name'); % yo, on Mac at least, this is a painfully slow operation. Maybe there are other factors (e.g., the fact that my machine ain't so hot anymore, or that it's connected to a network), but yeah, on my machine, this line hangs.
     % Prepend username to default filename
     outFileName = [char(username) DEFOUTNAME];
     % Dialog asking for savename, with smart default output filename
